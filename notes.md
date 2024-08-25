@@ -46,3 +46,33 @@ sqlite3
 -- to change the table view mode
 .mode [column, table, markdown, etc.]
 ```
+
+## 6. Generate random secret key using openssl library
+```bash
+openssl rand -hex 32
+```
+
+## 7. Alembic
+Alembic is a database migrations tool
+```python
+# Installing alembic library
+pip install alembic
+
+# Initiating alembic
+alembic init alembic
+```
+
+### 7a. Alembic Revision
+It is how we create a new alembic file where we can add some type of database upgrade
+
+```python
+# Create alembic revision
+alembic revision -m "create phone number col on users table"
+
+# Upgrade alembic revision
+alembic upgrade <Revision ID>
+
+# Downgrade alembic revision
+alembic downgrade -1
+```
+
